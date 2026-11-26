@@ -112,6 +112,7 @@ public final class AdService {
     FlagdProvider flagdProvider = new FlagdProvider(options);
     // Set flagd as the OpenFeature Provider
     OpenFeatureAPI.getInstance().setProvider(flagdProvider);
+    OpenFeatureAPI.getInstance().addHooks(new FeatureFlagEvaluationHook());
 
     server =
         ServerBuilder.forPort(port)

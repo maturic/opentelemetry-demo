@@ -119,8 +119,7 @@ afterEvaluate {
 }
 
 spotless {
-    // Automated source rewrites (flag removal) are not google-java-format clean; run spotlessCheck explicitly.
-    enforceCheck = false
+    enforceCheck = true
     java {
         target 'src/main/java/**/*.java', 'src/test/java/**/*.java'
         googleJavaFormat('2.0.0')
